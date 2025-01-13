@@ -10,12 +10,17 @@ def body (request):
 
 def index (request):
 
-    Input = Post_Input (request.POST or None)
+    form = Post_Input (request.POST or None, request.FILES)
 
-    if Input.method == 'POST':
-        if Input.is_valid():
+    if request.method == 'POST':
+        if form.is_valid():
 
-            Input.save()
+            form.save()
+            Post_Input ()
             return redirect ('Main')
+        
+    context = {
+        'form' : form
+    }
 
-    return render (request, 'index.html')
+    return render (request, 'index.html', context=context)
