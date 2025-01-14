@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+from telegram import Bot
+
 def scrap_data (url):
 
     try:
