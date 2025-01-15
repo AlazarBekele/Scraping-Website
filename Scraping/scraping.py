@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 from telegram import Bot
 
+
 def scrap_data (url):
 
     try:
@@ -20,3 +21,10 @@ def scrap_data (url):
     except Exception as e:
         
         return f"Error: {str(e)}"
+    
+
+TELEGRAM_BOT_TOKEN = '7625611051:AAGorAAExqg3t1DxAa25edR_2DvRt3p0Fts'
+
+    
+
+# def send_to_telegram (message):
